@@ -1,0 +1,475 @@
+/* Menú de navegación */
+nav {
+    margin: 27px auto 0;
+    position: relative;
+    width: 590px;
+    height: 50px;
+    background-color: #34495e;
+    border-radius: 8px;
+    font-size: 0;
+}
+
+nav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all 0.5s ease 0s;
+    border-radius: 8px;
+}
+
+a:nth-child(1) { width: 100px; }
+a:nth-child(2) { width: 110px; }
+a:nth-child(3) { width: 100px; }
+a:nth-child(4) { width: 160px; }
+a:nth-child(5) { width: 120px; }
+
+nav .start-home, a:nth-child(1):hover ~ .animation {
+    width: 100px;
+    left: 0;
+    background-color: #1abc9c;
+}
+
+nav .start-about, a:nth-child(2):hover ~ .animation {
+    width: 110px;
+    left: 100px;
+    background-color: #e74c3c;
+}
+
+nav .start-blog, a:nth-child(3):hover ~ .animation {
+    width: 100px;
+    left: 210px;
+    background-color: #3498db;
+}
+
+nav .start-portfolio, a:nth-child(4):hover ~ .animation {
+    width: 160px;
+    left: 310px;
+    background-color: #9b59b6;
+}
+
+nav .start-contact, a:nth-child(5):hover ~ .animation {
+    width: 120px;
+    left: 470px;
+    background-color: #e67e22;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('ciudad.jpeg'); /* Reemplaza 'ciudad.jpeg' con el nombre de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Para que los elementos absolutamente posicionados se ajusten al cuerpo */
+}
+
+.banner h1, .banner h2 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 42px;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: 'Cherry Swash', cursive;
+}
+
+/* Sección principal */
+main {
+    min-height: 100vh;
+    max-width: 600px; /* Tamaño fijo */
+    margin: 10px auto; /* Centrado */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ecf0f1;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.nieve-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que la nieve no interfiera con otros elementos */
+}
+
+.nieve {
+    position: absolute;
+    top: -10px;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowfall 5s linear infinite;
+}
+
+.nieve:nth-child(2) { left: 10%; animation-delay: 0.5s; }
+.nieve:nth-child(3) { left: 20%; }
+.nieve:nth-child(4) { left: 30%; animation-delay: 0.6s; }
+.nieve:nth-child(5) { left: 40%; animation-delay: 0.3s; }
+.nieve:nth-child(6) { left: 50%; }
+.nieve:nth-child(7) { left: 60%; animation-delay: 0.7s; }
+.nieve:nth-child(8) { left: 70%; }
+.nieve:nth-child(9) { left: 80%; }
+
+/* Ajusta las posiciones y los retrasos para cada copo de nieve adicional según sea necesario */
+
+@keyframes snowfall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+}
+
+.perfil {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.perfil img {
+    width: 200px;
+    height: 200px;
+    border: 3px solid violet;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil img:hover {
+    border-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.informacion h2 {
+    font-size: 20px;
+    color: #ecf0f1;
+}
+
+.informacion p {
+    font-size: 16px;
+    color: #ecf0f1;
+}
+
+
+/* Estilos para la sección de talentos */
+
+
+.contenedor-habilidades{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Cherry Swash', cursive;
+}
+
+.talentos {
+    flex: 1;
+    margin-right: 20px;
+}
+.office{
+    flex: 1;
+}
+
+.talentos h2 {
+    font-size: 30px;
+    color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.barra {
+    margin: 10px 0;
+}
+
+.etiqueta {
+    font-size: 16px;
+    color: #ecf0f1;
+    margin-bottom: 5px;
+}
+
+.progreso {
+    position: relative;
+    width: 0;
+    height: 20px;
+    background-color: crimson;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #ecf0f1;
+    font-weight: bold;
+    animation: llenar 2s ease-in-out forwards;
+    animation-delay: 0.5s; /* Retraso de 0.5 segundos */
+
+}
+
+@keyframes llenar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.office {
+    flex: 1;
+    margin-top: 5px;
+}
+
+.office h2 {
+    font-size: 30px;
+    color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Cherry Swash', cursive;
+}
+
+.iconos {
+    display: flex;
+    
+    flex-direction: column;    
+    
+}
+.iconos i{
+    font-size: 16px;
+    margin-top:30px ;
+
+}
+
+.office .iconos i:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al 120% */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+    cursor: pointer;
+}
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 1px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #ff00de, 0 0 80px #ff00de, 0 0 90px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+    100% {
+        text-shadow: 0 0 1px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #ff00de, 0 0 80px #ff00de, 0 0 90px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+}
+
+
+/*PARTE LOGROS*/
+
+.contenedor-logros{
+    padding: 75px;
+    font-family: 'Cherry Swash', cursive;
+    justify-content: space-around;
+}
+.logros-decorativos {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.decoracion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.decoracion i {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.decoracion p {
+    font-size: 16px;
+    color: #555;
+}
+
+
+
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px yellow, 0 0 70px yellow, 0 0 80px yellow, 0 0 100px yellow, 0 0 150px yellow;
+    }
+    50% {
+        text-shadow: none;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px yellow, 0 0 70px yellow, 0 0 80px yellow, 0 0 100px yellow, 0 0 150px yellow;
+    }
+}
+
+.decoracion i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    animation: glow 2s infinite alternate;
+}
+
+
+/*parte 3*/
+
+
+
+.portafolio {
+    text-align: center;
+    padding: 74px;
+      font-family: 'Cherry Swash', cursive;
+}
+
+.title-icon {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.portafolio h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.portafolio i {
+    font-size: 105px;
+    margin-bottom: 20px;
+    
+}
+
+.portafolio ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.portafolio li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.portafolio li::before {
+    content: "\2022"; /* Unicode para el bullet */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+
+/*parte cuatro*/
+
+.contacto {
+    font-family: 'Cherry Swash', cursive;
+    text-align: center;
+
+}
+
+.contacto h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contacto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contacto li {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.contacto i {
+    margin-right: 10px;
+}
+
+/* Animación al pasar el cursor sobre los iconos de redes sociales */
+.contacto i:hover {
+    animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+.contacto i:hover {
+    animation: pulse 0.5s infinite alternate, glows 1s infinite;
+}
+
+@keyframes glows {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.3);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+/*blog*/
+  }
+.main-blog{
+    padding: 70px;
+}
+section {
+
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-family: 'Cherry Swash', cursive;
+    color: white;
+}
+
+p {
+    font-family: 'Cherry Swash', cursive;
+    line-height: 1.6;
+    color: white;
+}
+
+.iframe-container {
+    width: 100%;
+    height: 400px; /* Ajusta la altura según lo necesites */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.iframe-container iframe {
+    width: 1000px; /* Escalar el iframe para ajustar todo el contenido */
+    height: 1000px; /* Escalar el iframe para ajustar todo el contenido */
+    transform: scale(0.4); /* Ajusta la escala según sea necesario */
+    transform-origin: 0 0; /* Asegura que la escala comience desde la esquina superior izquierda */
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
